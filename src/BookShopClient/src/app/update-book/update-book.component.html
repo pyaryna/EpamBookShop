@@ -1,0 +1,81 @@
+<form [formGroup] = "updateBookForm" (ngSubmit)="onSubmit()" class="mt-3" *ngIf="book">
+    <div class="form-group row">
+        <label for="title" class="col-sm-2 col-form-label required">Title</label>
+        <div class="col-sm-10">
+            <input for="title" class="form-control" placeholder="Title" formControlName="title"/>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="language" class="col-sm-2 col-form-label required">Language</label>
+        <div class="col-sm-10">
+            <input for="language" class="form-control" placeholder="Language" formControlName="language"/>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="year" class="col-sm-2 col-form-label required">Year</label>
+        <div class="col-sm-10">
+            <input for="year" class="form-control" placeholder="Year" formControlName="year"/>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="format" class="col-sm-2 col-form-label required">Format</label>
+        <div class="col-sm-10">
+            <input for="format" class="form-control" placeholder="Format" formControlName="format"/>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="cover" class="col-sm-2 col-form-label required">Cover</label>
+        <div class="col-sm-10">
+            <input for="cover" class="form-control" placeholder="Cover" formControlName="cover"/>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="pagesAmount" class="col-sm-2 col-form-label required">PagesAmount</label>
+        <div class="col-sm-10">
+            <input for="pagesAmount" class="form-control" placeholder="PagesAmount" formControlName="pagesAmount"/>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="description" class="col-sm-2 col-form-label required">Description</label>
+        <div class="col-sm-10">
+            <textarea for="description" class="form-control" placeholder="Description" formControlName="description"></textarea>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="price" class="col-sm-2 col-form-label required">Price</label>
+        <div class="col-sm-10">
+            <input for="price" class="form-control" placeholder="Price" formControlName="price"/>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="authorId" class="col-sm-2 col-form-label required">Author</label>
+        <div class="col-sm-10">
+            <select for="authorId" class="form-control" formControlName="authorId">
+                <option *ngFor="let a of authors" [ngValue]="a.id">{{ a.name }}</option>
+            </select>
+        </div>        
+    </div>
+    <div class="form-group row">
+        <label for="categoryId" class="col-sm-2 col-form-label required">Category</label>
+        <div class="col-sm-10">
+            <select for="categoryId" class="form-control" formControlName="categoryId">
+                <option *ngFor="let c of categories" [ngValue]="c.id">{{ c.name }}</option>
+            </select>
+        </div>        
+    </div>
+    <div class="form-group row">
+        <label for="image" class="col-sm-2 col-form-label required">Image</label>           
+        <div class="form-group col-sm-10">
+            <input type="file" name="image" formControlName="image" (change)="uploadFile($event)">
+        </div>
+        <div class="image-preview mb-3" *ngIf="previewUrl">
+            <img [src]="previewUrl" height="300" />                 
+        </div>
+    </div>
+
+    <div>
+        <button type="submit" class="btn btn-primary">
+            Update
+        </button>
+    </div>
+</form>

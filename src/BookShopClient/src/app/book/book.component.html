@@ -1,0 +1,33 @@
+<div class="container book-details" *ngIf="book">
+    <h4 class="modal-title">{{book.title}}</h4>
+    <img src="assets{{book.imageUrl.substr(1)}}" class="padding book-image" alt="book image" />
+    <p>
+        Автор:
+        {{book.authors[0].name}} <br>
+        Мова видання: {{book.language}}<br>
+        Рік видання: {{book.year}}<br>
+        Формат: {{book.format}}<br>
+        Палітурка: {{book.cover}}<br>
+        Обсяг: {{book.pagesAmount}} с.
+    </p>
+    <p>
+        {{book.description}}
+    </p>
+    <p>
+        Ціна: {{book.price}} грн
+    </p>
+    <div>
+        <button type="submit" class="btn btn-danger m-1" 
+            onclick="return alert('Книга додана у кошик')">
+            <i class="fas fa-shopping-cart"></i>
+        </button>
+
+        <button class="btn btn-warning m-1" (click)="updateBook(book.id)">
+            Update
+        </button>
+
+        <button class="btn btn-danger m-1"
+        (click)="deleteBook(book.id)">Delete</button>
+
+    </div>
+</div>

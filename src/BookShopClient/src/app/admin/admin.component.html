@@ -1,0 +1,25 @@
+<div class="handler padding">
+    <ul class="list-inline">
+        <li class="list-inline-item handler-item">
+            <a class="btn" [routerLink]="['./books']">Books</a>
+        </li>
+        <li class="list-inline-item handler-item">
+            <a class="btn" [routerLink]="['./newbook']">New book</a>
+        </li>
+        <li class="list-inline-item handler-item">
+            <a class="btn" [routerLink]="['./authors']">Authors</a>
+        </li>
+        <li class="list-inline-item handler-item">
+            <a class="btn" [routerLink]="['./categories']">Categories</a>
+        </li>
+        <li class="list-inline-item handler-item">
+            <a class="btn" [routerLink]="['./customers']">Customers</a>
+        </li>
+        <li class="list-inline-item handler-item">
+            <a class="btn" [routerLink]="['./orders']">Orders</a>
+        </li>
+    </ul>
+</div>
+<div class="container padding">
+    <router-outlet></router-outlet>
+</div>
