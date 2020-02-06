@@ -7,8 +7,6 @@ namespace BookShop.DAL.Entities
 {
     public class Customer: IdentityUser
     {
-        public string Name { get; set; }
-        public ICollection<Cart> Carts { get; set; }
         public ICollection<Comment> Comments { get; set; }
         public ICollection<Order> Orders { get; set; }
     }

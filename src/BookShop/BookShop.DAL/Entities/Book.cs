@@ -8,7 +8,6 @@ namespace BookShop.DAL.Entities
     {
         public Book()
         {
-            Carts = new HashSet<Cart>();
             Comments = new HashSet<Comment>();
 
             BookAuthors = new HashSet<BookAuthor>();
@@ -27,7 +26,6 @@ namespace BookShop.DAL.Entities
         public string Description { get; set; }
         public int Price { get; set; }
 
-        public ICollection<Cart> Carts { get; set; }
         public ICollection<Comment> Comments { get; set; }
 
         public ICollection<BookAuthor> BookAuthors { get; set; }

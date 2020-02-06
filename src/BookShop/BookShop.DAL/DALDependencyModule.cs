@@ -13,7 +13,6 @@ namespace BookShop.DAL
         {                  
             builder.RegisterType<BookRepository>().As<IBookRepository>();
             builder.RegisterType<AuthorRepository>().As<IAuthorRepository>();
-            builder.RegisterType<CartRepository>().As<ICartRepository>();
             builder.RegisterType<CategoryRepository>().As<ICategoryRepository>();
             builder.RegisterType<CommentRepository>().As<ICommentRepository>();
             builder.RegisterType<NotificationRepository>().As<INotificationRepository>();

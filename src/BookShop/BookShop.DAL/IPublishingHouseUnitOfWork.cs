@@ -12,8 +12,7 @@ namespace BookShop.DAL
         IBookAuthorRepository BookAuthors { get; }
         IBookCategoryRepository BookCategories { get; }
         IBookOrderRepository BookOrders { get; }
-        IBookRepository Books { get; }
-        ICartRepository Carts { get; }        
+        IBookRepository Books { get; } 
         ICategoryRepository Categories { get; }
         ICommentRepository Comments { get; }
         INotificationRepository Notifications { get; }

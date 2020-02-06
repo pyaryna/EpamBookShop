@@ -39,11 +39,7 @@ namespace BookShop.DAL.EntityConfigurations
 
             builder.Property(b => b.Price)
                 .IsRequired();
-
-            builder.HasMany(b => b.Carts)
-                .WithOne(b => b.Book)
-                .HasForeignKey(b => b.BookId);
-
+        
             builder.HasMany(b => b.Comments)
                 .WithOne(b => b.Book)
                 .HasForeignKey(b => b.BookId);

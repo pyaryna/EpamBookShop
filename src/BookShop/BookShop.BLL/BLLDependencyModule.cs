@@ -16,11 +16,11 @@ namespace BookShop.BLL
             builder.RegisterType<BookService>().As<IBookService>();
             builder.RegisterType<AuthorService>().As<IAuthorService>();
             builder.RegisterType<AuthService>().As<IAuthService>();
-            builder.RegisterType<CartService>().As<ICartService>();
             builder.RegisterType<CategoryService>().As<ICategoryService>();
             builder.RegisterType<CommentService>().As<ICommentService>();
             builder.RegisterType<NotificationService>().As<INotificationService>();
             builder.RegisterType<OrderService>().As<IOrderService>();
+            builder.RegisterType<TokenService>().As<ITokenService>();
 
             builder.RegisterModule<DALDependencyModule>();
         }

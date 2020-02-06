@@ -20,7 +20,6 @@ namespace BookShop.DAL
             BookCategories = new BookCategoryRepository(_context);
             BookOrders = new BookOrderRepository(_context);
             Books = new BookRepository(_context);
-            Carts = new CartRepository(_context);
             Categories = new CategoryRepository(_context);
             Comments = new CommentRepository(_context);
             Notifications =  new NotificationRepository(_context);
@@ -32,7 +31,6 @@ namespace BookShop.DAL
         public IBookCategoryRepository BookCategories { get; }
         public IBookOrderRepository BookOrders { get; }
         public IBookRepository Books { get; }
-        public ICartRepository Carts { get; }
         public ICategoryRepository Categories { get; }
         public ICommentRepository Comments { get; }
         public INotificationRepository Notifications { get; }

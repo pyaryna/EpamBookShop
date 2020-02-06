@@ -11,14 +11,6 @@ namespace BookShop.DAL.EntityConfigurations
     {
         public void Configure(EntityTypeBuilder<Customer> builder)
         {
-            builder.Property(c => c.Name)
-                .IsRequired();
-
-            builder.HasMany(u => u.Carts)
-                .WithOne(l => l.Customer)
-                .HasForeignKey(l => l.CustomerId)
-                .IsRequired();
-
             builder.HasMany(u => u.Comments)
                 .WithOne(f => f.Customer)
                 .HasForeignKey(f => f.CustomerId)

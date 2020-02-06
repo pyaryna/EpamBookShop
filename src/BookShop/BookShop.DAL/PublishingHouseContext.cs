@@ -16,7 +16,6 @@ namespace BookShop.DAL
         public DbSet<Author> Authors { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Comment> Comments { get; set; }
-        public DbSet<Cart> Carts { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Notification> Notifications { get; set; }
 

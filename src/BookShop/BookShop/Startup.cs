@@ -102,7 +102,6 @@ namespace BookShop
             services.AddAutoMapper(typeof(BookCategoryProfile).Assembly);
             services.AddAutoMapper(typeof(BookOrderProfile).Assembly);
             services.AddAutoMapper(typeof(BookProfile).Assembly);
-            services.AddAutoMapper(typeof(CartProfile).Assembly);
             services.AddAutoMapper(typeof(CommentProfile).Assembly);
             services.AddAutoMapper(typeof(NotificationProvider).Assembly);
             services.AddAutoMapper(typeof(OrderProfile).Assembly);
