@@ -1,13 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PublishingHouse.DAL.Entities;
-using PublishingHouse.DAL.Interfaces.Repositories;
+using BookShop.DAL.Entities;
+using BookShop.DAL.Interfaces.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PublishingHouse.DAL.Repositories
+namespace BookShop.DAL.Repositories
 {
     public class BookRepository : Repository<Book, int>, IBookRepository
     {

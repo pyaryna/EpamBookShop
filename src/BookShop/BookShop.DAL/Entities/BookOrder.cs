@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PublishingHouse.DAL.Entities
+namespace BookShop.DAL.Entities
 {
     public class BookOrder
     {

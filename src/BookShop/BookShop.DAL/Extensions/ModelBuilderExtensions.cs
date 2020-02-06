@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PublishingHouse.DAL.Entities;
-using PublishingHouse.DAL.EntityConfigurations;
+using BookShop.DAL.Entities;
+using BookShop.DAL.EntityConfigurations;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace PublishingHouse.DAL.Extensions
+namespace BookShop.DAL.Extensions
 {
     public static class ModelBuilderExtensions
     {

@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
-using PublishingHouse.BLL.DTOs;
-using PublishingHouse.DAL.Entities;
+using BookShop.BLL.DTOs;
+using BookShop.DAL.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace PublishingHouse.BLL.MappingProfilers
+namespace BookShop.BLL.MappingProfilers
 {
     public class BookOrderProfile: Profile
     {

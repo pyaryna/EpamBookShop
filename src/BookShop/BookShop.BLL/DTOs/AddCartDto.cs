@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PublishingHouse.BLL.DTOs
+namespace BookShop.BLL.DTOs
 {
     public class AddCartDto
     {

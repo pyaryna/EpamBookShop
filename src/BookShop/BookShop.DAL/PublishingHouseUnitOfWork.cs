@@ -1,11 +1,11 @@
-﻿using PublishingHouse.DAL.Interfaces.Repositories;
-using PublishingHouse.DAL.Repositories;
+﻿using BookShop.DAL.Interfaces.Repositories;
+using BookShop.DAL.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PublishingHouse.DAL
+namespace BookShop.DAL
 {
     public class PublishingHouseUnitOfWork: IPublishingHouseUnitOfWork
     {

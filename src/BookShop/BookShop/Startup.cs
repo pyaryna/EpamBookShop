@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using AutoMapper;
+using BookShop.BLL.Settings;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -15,11 +17,13 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using PublishingHouse.BLL;
-using PublishingHouse.BLL.MappingProfilers;
-using PublishingHouse.DAL;
-using PublishingHouse.DAL.Entities;
+using BookShop.BLL;
+using BookShop.BLL.MappingProfilers;
+using BookShop.DAL;
+using BookShop.DAL.Entities;
 
 namespace BookShop
 {
@@ -42,17 +46,37 @@ namespace BookShop
             services.AddIdentity<Customer, IdentityRole>()
                 .AddEntityFrameworkStores<PublishingHouseContext>();
 
-            //services.AddAuthentication()
-            //    .AddGoogle(options =>
-            //    {
-            //        options.ClientId = Configuration["Authentication:Google:ClientId"];
-            //        options.ClientSecret = Configuration["Authentication:Google:ClientSecret"];
-            //    })
-            //    .AddFacebook(options =>
-            //    {
-            //        options.ClientId = Configuration["Authentication:Facebook:AppId"];
-            //        options.ClientSecret = Configuration["Authentication:Facebook:AppSecret"];
-            //    });
+            var jwtSettings = new JwtSettings();
+            Configuration.Bind(nameof(jwtSettings), jwtSettings);
+
+                //services.BuildServiceProvider()
+                //.GetService<IOptions<JwtSettings>>()
+                //.Value;
+
+            var tokenValidationParameters = new TokenValidationParameters
+            {
+                ValidateIssuerSigningKey = true,
+                IssuerSigningKey = new SymmetricSecurityKey(jwtSettings.SecretBytes),
+                ValidateIssuer = false,
+                ValidateAudience = false,
+                ValidateLifetime = true,
+                ClockSkew = TimeSpan.FromMinutes(0)
+            };
+
+            services.AddSingleton(tokenValidationParameters);
+
+            services.AddAuthentication(
+                    options =>
+                    {
+                        options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                        options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                        options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                    })
+                .AddJwtBearer(
+                    options =>
+                    {
+                        options.TokenValidationParameters = tokenValidationParameters;
+                    });
 
             services.AddControllers();
 
@@ -90,8 +114,7 @@ namespace BookShop
 
             AutofacContainer = builder.Build();
 
-            return new AutofacServiceProvider(AutofacContainer);
-            //
+            return new AutofacServiceProvider(AutofacContainer);            
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

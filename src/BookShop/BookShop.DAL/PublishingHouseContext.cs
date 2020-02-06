@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using PublishingHouse.DAL.Entities;
-using PublishingHouse.DAL.Extensions;
+using BookShop.DAL.Entities;
+using BookShop.DAL.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace PublishingHouse.DAL
+namespace BookShop.DAL
 {
     public class PublishingHouseContext: IdentityDbContext<Customer>
     {   

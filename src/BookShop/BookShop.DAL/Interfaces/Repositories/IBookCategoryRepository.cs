@@ -1,9 +1,9 @@
-﻿using PublishingHouse.DAL.Entities;
+﻿using BookShop.DAL.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace PublishingHouse.DAL.Interfaces.Repositories
+namespace BookShop.DAL.Interfaces.Repositories
 {
     public interface IBookCategoryRepository : IRepository<BookCategory, int>
     {

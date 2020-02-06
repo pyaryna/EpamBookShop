@@ -4,8 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using PublishingHouse.BLL.DTOs;
-using PublishingHouse.BLL.Interfaces;
+using BookShop.BLL.DTOs;
+using BookShop.BLL.Interfaces;
 
 namespace BookShop.Controllers
 {

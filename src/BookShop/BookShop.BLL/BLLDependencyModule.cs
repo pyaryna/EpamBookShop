@@ -1,13 +1,13 @@
 ﻿using Autofac;
-using PublishingHouse.BLL.Interfaces;
-using PublishingHouse.BLL.Services;
-using PublishingHouse.DAL;
-using PublishingHouse.DAL.Repositories;
+using BookShop.BLL.Interfaces;
+using BookShop.BLL.Services;
+using BookShop.DAL;
+using BookShop.DAL.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace PublishingHouse.BLL
+namespace BookShop.BLL
 {
     public class BLLDependencyModule: Module
     {
@@ -15,6 +15,7 @@ namespace PublishingHouse.BLL
         {
             builder.RegisterType<BookService>().As<IBookService>();
             builder.RegisterType<AuthorService>().As<IAuthorService>();
+            builder.RegisterType<AuthService>().As<IAuthService>();
             builder.RegisterType<CartService>().As<ICartService>();
             builder.RegisterType<CategoryService>().As<ICategoryService>();
             builder.RegisterType<CommentService>().As<ICommentService>();

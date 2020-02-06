@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PublishingHouse.DAL.Interfaces.Repositories;
+using BookShop.DAL.Interfaces.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PublishingHouse.DAL.Repositories
+namespace BookShop.DAL.Repositories
 {
     public abstract class Repository<TEntity, TKey> : IRepository<TEntity, TKey> where TEntity : class
     {

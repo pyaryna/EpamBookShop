@@ -4,6 +4,8 @@ import {
   FormGroup,
   Validators
 } from '@angular/forms';
+import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -17,7 +19,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
   }
 
-  constructor(fb: FormBuilder) {
+  constructor(private authService: AuthService, fb: FormBuilder, private router: Router) {
     this.registerForm = fb.group({
       'name': ['', Validators.required],
       'email': ['', Validators.required],
@@ -27,6 +29,14 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.registerForm.get('name').value);
+    let formData = new FormData();
+
+    formData.append("name", this.registerForm.get('name').value);
+    formData.append("email", this.registerForm.get('email').value);
+    formData.append("password", this.registerForm.get('password').value);
+
+    this.authService.register(formData)
+    .subscribe(res =>{
+      this.router.navigate(["/book"])});
   }
 }

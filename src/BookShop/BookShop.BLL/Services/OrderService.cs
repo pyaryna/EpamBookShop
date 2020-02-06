@@ -1,15 +1,15 @@
 ﻿using AutoMapper;
-using PublishingHouse.BLL.DTOs;
-using PublishingHouse.BLL.Interfaces;
-using PublishingHouse.DAL;
-using PublishingHouse.DAL.Entities;
+using BookShop.BLL.DTOs;
+using BookShop.BLL.Interfaces;
+using BookShop.DAL;
+using BookShop.DAL.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PublishingHouse.BLL.Services
+namespace BookShop.BLL.Services
 {
     public class OrderService: IOrderService
     {

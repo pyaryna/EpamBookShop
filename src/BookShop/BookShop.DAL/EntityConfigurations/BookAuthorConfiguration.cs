@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using PublishingHouse.DAL.Entities;
+using BookShop.DAL.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace PublishingHouse.DAL.EntityConfigurations
+namespace BookShop.DAL.EntityConfigurations
 {
     class BookAuthorConfiguration : IEntityTypeConfiguration<BookAuthor>
     {

@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using PublishingHouse.DAL;
+using BookShop.DAL;
 
-namespace PublishingHouse.DAL.Migrations
+namespace BookShop.DAL.Migrations
 {
     [DbContext(typeof(PublishingHouseContext))]
     [Migration("20191208145253_ChangeCustomerIdType")]

@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace PublishingHouse.DAL.Migrations
+namespace BookShop.DAL.Migrations
 {
     public partial class UpdateCommentTable : Migration
     {

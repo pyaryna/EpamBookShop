@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PublishingHouse.DAL.Interfaces.Repositories
+namespace BookShop.DAL.Interfaces.Repositories
 {
     public interface IRepository<TEntity, in TKey> where TEntity : class
     {

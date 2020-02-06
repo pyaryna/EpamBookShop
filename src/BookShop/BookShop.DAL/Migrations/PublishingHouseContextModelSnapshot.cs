@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using PublishingHouse.DAL;
+using BookShop.DAL;
 
-namespace PublishingHouse.DAL.Migrations
+namespace BookShop.DAL.Migrations
 {
     [DbContext(typeof(PublishingHouseContext))]
     partial class PublishingHouseContextModelSnapshot : ModelSnapshot
